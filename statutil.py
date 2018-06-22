@@ -34,5 +34,14 @@ def multinom3(x1, x2, x3, p1, p2, p3):
 		raise ValueError("Enter valid numbers of successes")
 		
 	return math.factorial(n)/(math.factorial(x1)*math.factorial(x2)*math.factorial(x3))*p1**x1*p1**x2*p3**x3
+	
+def multinom4(x1, x2, x3, x4, p1, p2, p3, p4):
+	if (p1 < 0 or p2 < 0 or p3 < 0 or p4 < 0 (((p1 + p2 + p3 + p4) - 1) > .0000001)):
+		raise ValueError("Enter a probability from 0 to 1")
+		
+	if (x1 + x2 + x3 + x4 != n):
+		raise ValueError("Enter valid numbers of successes")
+		
+	return math.factorial(n)/(math.factorial(x1)*math.factorial(x2)*math.factorial(x3)*math.factorial(x4)*p1**x1*p1**x2*p3**x3*p4**x4
 
 
