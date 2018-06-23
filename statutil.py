@@ -47,8 +47,17 @@ def multinom4(x1, x2, x3, x4, p1, p2, p3, p4):
 def hypgeo(x, N, n, k):
 	"""returns probability of x successes of sample size n 
 	of total N with k elements of N that are possible successes"""
+	
 	if (n > N or k > N or x > N or x > n or x > k)
 		raise ValueError("Incorrect parameters")
 	return cu.choose(k, x)*cu.choose(N-k,n-x)/cu.choose(N,n)
+	
+def negbionom(x, k, p):
+	"""returns probability of kth success occurring on xth trial of event of probability p"""
+	if (k > x or p < 0 or p > 1 or x <= 0 or k <= 0)
+		raise ValueError("Incorrect parameters")
+	return cu.choose(x - 1, k - 1)*p**k*(1-p)**(x-k)
+	
+	
 
 
