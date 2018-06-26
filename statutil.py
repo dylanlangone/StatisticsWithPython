@@ -64,5 +64,12 @@ def poisson(x, l, t):
 		raise ValueError("Inappropriate arguments")
 	
 	return math.exp(-1*l*t)*(l*t)**x/(math.factorial(x))
+	
+def gaussian(x, mu, sig):
+	"""returns probability of gaussian distribution at point x with mean of mu and
+	standard deviation sig"""
+	if (sig <= 0)
+		raise ValueError("Sigma <= 0")
+	return 1/((2*math.pi)**.5*sig)*exp(-1/(2*sig**2)*(x-mu)**2)
 
 
