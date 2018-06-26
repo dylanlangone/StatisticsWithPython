@@ -49,15 +49,20 @@ def hypgeo(x, N, n, k):
 	of total N with k elements of N that are possible successes"""
 	
 	if (n > N or k > N or x > N or x > n or x > k)
-		raise ValueError("Incorrect parameters")
+		raise ValueError("Inappropriate arguments")
 	return cu.choose(k, x)*cu.choose(N-k,n-x)/cu.choose(N,n)
 	
 def negbionom(x, k, p):
 	"""returns probability of kth success occurring on xth trial of event of probability p"""
 	if (k > x or p < 0 or p > 1 or x <= 0 or k <= 0)
-		raise ValueError("Incorrect parameters")
+		raise ValueError("Inappropriate arguments")
 	return cu.choose(x - 1, k - 1)*p**k*(1-p)**(x-k)
 	
+def poisson(x, l, t):
+	"""returns Poisson probability of x occurring"""
+	if (x < 0 or l < 0 or t < 0)
+		raise ValueError("Inappropriate arguments")
 	
+	return math.exp(-1*l*t)*(l*t)**x/(math.factorial(x))
 
 
