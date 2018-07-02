@@ -71,5 +71,11 @@ def gaussian(x, mu, sig):
 	if (sig <= 0)
 		raise ValueError("Sigma <= 0")
 	return 1/((2*math.pi)**.5*sig)*exp(-1/(2*sig**2)*(x-mu)**2)
+	
+def gammadist(x, a , b):
+	"""returns probability density of gamma distribution at x, with a = alpha, b = beta"""
+	if (x <= 0)
+		return 0
+	return 1/(b**a*math.gamma(x))*math.exp(-1*x/b)
 
 
