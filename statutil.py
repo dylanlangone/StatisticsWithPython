@@ -77,5 +77,11 @@ def gammadist(x, a , b):
 	if (x <= 0)
 		return 0
 	return 1/(b**a*math.gamma(x))*math.exp(-1*x/b)
+	
+def expdist(x, b):
+	"""returns probability density of exponential distribution at x with b = beta"""
+	if (x <= 0)
+		return 0
+	return (1/b)*math.exp(-1*x/b)
 
 
