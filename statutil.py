@@ -91,5 +91,22 @@ def chisqrdist(x, v):
 	if (!isinstance(v, int) or v <= 0)
 		raise ValueError("Enter a positive integer for degrees of freedom")
 	return gammadist(x, v/2, 2)
+	
+def beta(a, b):
+	"""returns beta function for a = alpha, b = beta"""
+	if (a <= 0 or b <= 0)
+		raise ValueError("Enter positive alpha and beta")
+	return math.gamma(a)*math.gamma(b)/math.gamma(a+b)
+	
+def betadist(x, a, b):
+	"""returns probability density of beta distribution at x"""
+	if (a <= 0 or b <= 0)
+		raise ValueError("Enter positive alpha and beta")
+	if (x > 0 and x < 1)
+		return 1/beta(a,b)*x**(a - 1)*(1 - x)**(b - 1)
+	else 
+		return 0
+	
+	
 
 
