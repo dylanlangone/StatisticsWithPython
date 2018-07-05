@@ -83,5 +83,13 @@ def expdist(x, b):
 	if (x <= 0)
 		return 0
 	return (1/b)*math.exp(-1*x/b)
+	
+def chisqrdist(x, v):
+	"""returns probability density of chi-squared distribution at x"""
+	if (x <= 0):
+		return 0;
+	if (!isinstance(v, int) or v <= 0)
+		raise ValueError("Enter a positive integer for degrees of freedom")
+	return gammadist(x, v/2, 2)
 
 
