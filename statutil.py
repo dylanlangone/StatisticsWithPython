@@ -106,7 +106,13 @@ def betadist(x, a, b):
 		return 1/beta(a,b)*x**(a - 1)*(1 - x)**(b - 1)
 	else 
 		return 0
-	
+
+def lognormal(x, u, s):
+	"""returns probability density of lognormal distribution at x, given mean m and std s"""
+	if (x <= 0)
+		return 0
+	else 
+		return 1/((2*math.pi)**(1/2)*s*x)*math.exp(-1/(2*s**2)*(np.log(x)-u)**2)
 	
 
 
